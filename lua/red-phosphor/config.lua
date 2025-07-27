@@ -2,7 +2,7 @@ local config = {
     defaults = {
         transparent = false,
         integrations = {},
-        overrides = {},
+        highlight_overrides = {},
         palette_overrides = {},
     },
 }

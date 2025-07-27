@@ -64,9 +64,12 @@ function theme.colorscheme()
         Directory = { link = "QuickFixList" },
         StatusLine = { bg = bg, fg = colors.fg4 },
         Question = { link = "StatusLine" },
+        MoreMsg = { link = "StatusLine" },
+        ModeMsg = { link = "StatusLine" },
         Visual = { bg = colors.fg2, fg = colors.bg2 },
         VisualNOS = { link = "Visual" },
-        PMenu = { link = "Visual" },
+        PMenu = { bg = colors.bg2 },
+        PMenuSel = { bg = colors.bg4 },
         ExtraWhitespace = { fg = colors.highlight },
         Ignore = { fg = colors.bg3 },
         Todo = { fg = colors.highlight, bold = true },
@@ -117,15 +120,13 @@ function theme.colorscheme()
         ["@punctuation.bracket"] = { link = "Special" },
     }
 
-    -- integrations
     for _, name in ipairs(config.integrations) do
         local plugin = require("red-phosphor.integrations." .. name)
         groups = vim.tbl_extend("force", groups, plugin.groups())
     end
 
-    -- overrides
     groups =
-        vim.tbl_extend("force", groups, type(config.overrides) == "function" and config.overrides() or config.overrides)
+        vim.tbl_extend("force", groups, config.highlight_overrides)
     for group, parameters in pairs(groups) do
         vim.api.nvim_set_hl(0, group, parameters)
     end
