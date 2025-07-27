@@ -33,7 +33,7 @@ function theme.colorscheme()
         Number = { fg = colors.fg4 },
         Float = { link = "Number" },
 
-        Function = { fg = colors.pink2 },
+        Function = { fg = colors.pink3 },
         Identifier = { link = "Function" },
         Method = { link = "Function" },
         Property = { link = "Function" },
@@ -45,7 +45,7 @@ function theme.colorscheme()
         Label = { link = "Keyword" },
         PreProc = { link = "Keyword" },
         Operator = { fg = colors.fg2 },
-        Type = { fg = utils.mix(colors.red3, colors.pink3, 0.5) },
+        Type = { fg = colors.red3 },
         Struct = { link = "Type" },
         Class = { link = "Type" },
         Exception = { link = "Type" },
