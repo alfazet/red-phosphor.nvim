@@ -1,6 +1,3 @@
-local config = require("red-phosphor.config")
-local mix = require("red-phosphor.utils").mix
-
 local colors = {
     bg1 = "#000000",
     bg2 = "#230513",

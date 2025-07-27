@@ -1,6 +1,6 @@
 local config = {
     defaults = {
-        transparent = false,
+        transparent = true,
         integrations = {},
         highlight_overrides = {},
         palette_overrides = {},
