@@ -1,0 +1,36 @@
+local config = require("red-phosphor.config")
+local mix = require("red-phosphor.utils").mix
+
+local colors = {
+    bg1 = "#000000",
+    bg2 = "#230513",
+    bg3 = "#470b26",
+    bg4 = "#6a1039",
+    bg5 = "#8d154c",
+    fg1 = "#ffffff",
+    fg2 = "#e3c5d2",
+    fg3 = "#c68aa5",
+    fg4 = "#aa5079",
+    fg5 = "#8d154c",
+    purple1 = "#5a0f43",
+    purple2 = "#66114c",
+    purple3 = "#711354",
+    purple4 = "#7f2b65",
+    purple5 = "#8d4276",
+    red1 = "#8e1630",
+    red2 = "#a01836",
+    red3 = "#b21b3c",
+    red4 = "#ba3250",
+    red5 = "#c14963",
+    pink1 = "#d94278",
+    pink2 = "#f14985",
+    pink3 = "#f25b91",
+    orange1 = "#f97046",
+    orange2 = "#fa7e59",
+    orange3 = "#fa8d6b",
+    orange4 = "#fb9b7e",
+    orange5 = "#fba990",
+    highlight = "#fcf16d",
+}
+
+return colors

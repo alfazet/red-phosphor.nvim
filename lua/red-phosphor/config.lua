@@ -1,13 +1,7 @@
 local config = {
     defaults = {
         transparent = false,
-        italics = {
-            comments = true,
-            keywords = true,
-            functions = true,
-            strings = true,
-            variables = true,
-        },
+        integrations = {},
         overrides = {},
         palette_overrides = {},
     },
