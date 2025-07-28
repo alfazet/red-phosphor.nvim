@@ -107,7 +107,7 @@ function theme.colorscheme()
         ["@operator"] = { link = "Operator" },
         ["@exception"] = { link = "Exception" },
         ["@variable"] = { fg = colors.fg, italic = true },
-        ["@variable.builtin"] = { fg = colors.fg, italic = true },
+        ["@variable.builtin"] = { link = "Keyword" },
         ["@type"] = { link = "Type" },
         ["@type.definition"] = { link = "Type" },
         ["@type.builtin"] = { link = "Type" },
