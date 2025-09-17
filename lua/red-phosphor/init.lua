@@ -78,7 +78,13 @@ function theme.colorscheme()
         Bold = { bold = true },
         Italic = { italic = true },
 
-        ["@text"] = { fg = colors.fg },
+        DiagnosticError = { fg = colors.red5 },
+        DiagnosticWarn = { fg = colors.orange5 },
+        DiagnosticInfo = { fg = colors.fg2 },
+        DiagnosticHint = { fg = colors.pink2 },
+        DiagnosticOk = { fg = colors.fg1 },
+
+        ["@text"] = { fg = colors.fg1 },
         ["@texcolors.literal"] = { link = "Property" },
         ["@texcolors.strong"] = { link = "Bold" },
         ["@texcolors.italic"] = { link = "Italic" },
