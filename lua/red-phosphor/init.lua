@@ -51,6 +51,8 @@ function theme.colorscheme()
         Exception = { link = "Type" },
         Delimiter = { fg = colors.fg2 },
         Special = { fg = colors.fg3 },
+        SpecialKey = { fg = colors.purple3 },
+        Conceal = { fg = colors.purple3 },
 
         LineNr = { fg = colors.fg4 },
         NonText = { link = "LineNr" },
@@ -83,6 +85,12 @@ function theme.colorscheme()
         DiagnosticInfo = { fg = colors.fg2 },
         DiagnosticHint = { fg = colors.pink2 },
         DiagnosticOk = { fg = colors.fg1 },
+
+        DiagnosticUnderlineError = { undercurl = true },
+        DiagnosticUnderlineWarn = { undercurl = true },
+        DiagnosticUnderlineInfo = { undercurl = true },
+        DiagnosticUnderlineHint = { undercurl = true },
+        DiagnosticUnderlineOk = { undercurl = true },
 
         ["@text"] = { fg = colors.fg1 },
         ["@texcolors.literal"] = { link = "Property" },
@@ -131,8 +139,7 @@ function theme.colorscheme()
         groups = vim.tbl_extend("force", groups, plugin.groups())
     end
 
-    groups =
-        vim.tbl_extend("force", groups, config.highlight_overrides)
+    groups = vim.tbl_extend("force", groups, config.highlight_overrides)
     for group, parameters in pairs(groups) do
         vim.api.nvim_set_hl(0, group, parameters)
     end
