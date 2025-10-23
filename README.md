@@ -2,8 +2,6 @@
 
 A red-dominated color scheme to illuminate your editor. Does not require frequent replacement to keep glowing.
 
-**Best paired with a transparent terminal window and a matching wallpaper!**
-
 <p align="center">
   <img src="https://github.com/alfazet/red-phosphor.nvim/blob/main/images/example.png">
 </p>
