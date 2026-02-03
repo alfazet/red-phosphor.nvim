@@ -7,7 +7,7 @@ function M.groups()
         FzfLuaBufNr = { fg = colors.fg2 },
         FzfLuaCursorLine = { bg = colors.bg3 },
         FzfLuaHeaderText = { fg = colors.red3 },
-        FzfLuaHeaderBind = { fg = colors.purple5 },
+        FzfLuaHeaderBind = { fg = colors.peach3 },
     }
 end
 
