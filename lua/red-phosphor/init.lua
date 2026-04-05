@@ -22,18 +22,18 @@ function theme.colorscheme()
     local bg = (config.transparent and "none") or colors.bg1
     local groups = {
         Normal = { bg = bg, fg = colors.fg1 },
-        Comment = { fg = colors.fg3, italic = true },
-        Constant = { fg = colors.peach1 },
+        Comment = { fg = utils.mix(colors.bg5, colors.fg1, 0.75), italic = true },
+        Constant = { fg = colors.red3 },
         Define = { link = "Constant" },
         Macro = { link = "Constant" },
-        Boolean = { fg = colors.red2 },
-        String = { fg = colors.peach2 },
-        Character = { fg = colors.peach2 },
-        SpecialChar = { fg = colors.peach2 },
-        Number = { fg = colors.fg4 },
+        Boolean = { fg = colors.red3 },
+        String = { fg = colors.beige3 },
+        Character = { fg = colors.beige3 },
+        SpecialChar = { fg = colors.beige3 },
+        Number = { fg = utils.mix(colors.red3, colors.fg1, 0.75) },
         Float = { link = "Number" },
 
-        Function = { fg = colors.pink3 },
+        Function = { fg = colors.pink1 },
         Identifier = { link = "Function" },
         Method = { link = "Function" },
         Property = { link = "Function" },
@@ -44,34 +44,34 @@ function theme.colorscheme()
         Conditional = { link = "Keyword" },
         Label = { link = "Keyword" },
         PreProc = { link = "Keyword" },
-        Operator = { fg = colors.fg2 },
-        Type = { fg = colors.pink2 },
+        Operator = { fg = utils.mix(colors.red3, colors.fg1, 0.5) },
+        Type = { fg = colors.pink3 },
         Struct = { link = "Type" },
         Class = { link = "Type" },
         Exception = { link = "Type" },
-        Delimiter = { fg = colors.fg2 },
-        Special = { fg = colors.fg3 },
-        SpecialKey = { fg = colors.mauve1 },
-        Conceal = { fg = colors.mauve1 },
+        Delimiter = { fg = utils.mix(colors.pink1, colors.fg1, 0.5) },
+        Special = { fg = utils.mix(colors.pink1, colors.fg1, 0.5) },
+        SpecialKey = { fg = colors.pink1 },
+        Conceal = { fg = colors.pink1 },
 
-        LineNr = { fg = colors.fg4 },
+        LineNr = { fg = utils.mix(colors.bg5, colors.beige3, 0.5) },
         NonText = { link = "LineNr" },
-        CursorLineNr = { fg = colors.fg2 },
-        IncSearch = { bg = utils.mix(colors.yellow, colors.fg1, 0.75), fg = colors.bg1 },
+        CursorLineNr = { fg = colors.beige3 },
+        IncSearch = { bg = colors.yellow, fg = colors.bg3 },
         Substitute = { link = "IncSearch" },
         Search = { link = "IncSearch" },
-        MatchParen = { bg = colors.fg1, fg = colors.bg1 },
+        MatchParen = { bg = colors.yellow, fg = colors.bg3 },
         QuickFixLine = { fg = colors.fg5 },
         QuickFixList = { fg = colors.fg3 },
         Directory = { link = "QuickFixList" },
-        StatusLine = { bg = bg, fg = colors.fg4 },
+        StatusLine = { bg = bg, fg = colors.red1 },
         Question = { link = "StatusLine" },
         MoreMsg = { link = "StatusLine" },
         ModeMsg = { link = "StatusLine" },
-        Visual = { bg = colors.fg2, fg = colors.bg2 },
+        Visual = { bg = colors.pink3, fg = colors.bg3 },
         VisualNOS = { link = "Visual" },
-        PMenu = { bg = colors.bg2 },
-        PMenuSel = { bg = colors.bg4 },
+        PMenu = { bg = colors.bg3 },
+        PMenuSel = { bg = colors.bg5 },
         ExtraWhitespace = { fg = colors.yellow },
         Ignore = { fg = colors.bg3 },
         Todo = { fg = colors.yellow, bold = true },
@@ -82,8 +82,8 @@ function theme.colorscheme()
 
         DiagnosticError = { fg = colors.red3 },
         DiagnosticWarn = { fg = colors.yellow },
-        DiagnosticInfo = { fg = colors.peach3 },
-        DiagnosticHint = { fg = colors.mauve3 },
+        DiagnosticInfo = { fg = colors.beige3 },
+        DiagnosticHint = { fg = colors.pink3 },
         DiagnosticOk = { fg = colors.fg1 },
 
         DiagnosticUnderlineError = { undercurl = true },
@@ -133,11 +133,6 @@ function theme.colorscheme()
         ["@error"] = { link = "Error" },
         ["@punctuation.bracket"] = { link = "Special" },
     }
-
-    for _, name in ipairs(config.integrations) do
-        local plugin = require("red-phosphor.integrations." .. name)
-        groups = vim.tbl_extend("force", groups, plugin.groups())
-    end
 
     groups = vim.tbl_extend("force", groups, config.highlight_overrides)
     for group, parameters in pairs(groups) do
